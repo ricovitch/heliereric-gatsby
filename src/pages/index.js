@@ -1,3 +1,4 @@
+import { Typography } from "@material-ui/core"
 import React from "react"
 import { Link } from "gatsby"
 
@@ -8,9 +9,8 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <Typography variant="h4">Senior Frontend Developer Toulouse</Typography>
+    <p>Welcome to my website, i'm an experienced frontend developer, previously as3/flex expert, now focused on react/nodejs/aws technologies.</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>

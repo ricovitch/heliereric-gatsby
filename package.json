@@ -1,10 +1,11 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "herliereric-gatsby-site",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Personal portfolio/blog based on gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Eric Helier <eric.helier@free.fr>",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "gatsby": "^2.3.5",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-manifest": "^2.0.26",
@@ -16,7 +17,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
