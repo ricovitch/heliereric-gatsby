@@ -10,15 +10,15 @@ import secondaryColor from "@material-ui/core/colors/blueGrey"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import WebFont from "webfontloader";
+// import WebFont from "webfontloader";
 
 import Header from "./header"
 
-WebFont.load({
+/* WebFont.load({
   google: {
     families: ['Roboto:300,400,500'],
   },
-});
+}); */
 
 // A theme with custom primary and secondary color.
 const theme = createMuiTheme({
