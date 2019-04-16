@@ -9,7 +9,7 @@ const styles = ({ palette, spacing, typography }) => ({
     marginBottom: spacing.unit * 3,
   },
   container: {
-    ...typography.h1,
+    ...typography.h3,
     margin: `0 auto`,
     maxWidth: 960,
     padding: `${spacing.unit * 3}px ${spacing.unit * 2}px`,

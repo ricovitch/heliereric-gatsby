@@ -10,6 +10,7 @@ import secondaryColor from "@material-ui/core/colors/blueGrey"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { SocialIcon } from "react-social-icons"
 // import WebFont from "webfontloader";
 
 import Header from "./header"
@@ -36,13 +37,21 @@ const theme = createMuiTheme({
   },
 });
 
-const styles = ({ typography }) => ({
+const styles = ({ spacing, typography }) => ({
   root: {
     ...typography.body1,
     margin: `0 auto`,
     maxWidth: 960,
     padding: `0px 1.0875rem 1.45rem`,
     paddingTop: 0,
+  },
+  main: {
+    margin: `${spacing.unit * 3}px 0`,
+  },
+  footer: {
+    '& a': {
+      marginRight: spacing.unit,
+    },
   },
 });
 
@@ -63,11 +72,11 @@ const Layout = ({ children, classes }) => (
 
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className={classes.root}>
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <main className={classes.main}>{children}</main>
+          <footer className={classes.footer}>
+            <SocialIcon url="http://twitter.com/heliereric" />
+            <SocialIcon url="https://www.linkedin.com/in/heliereric/" />
+            <SocialIcon url="https://github.com/ricovitch" />
           </footer>
         </div>
       </MuiThemeProvider>
