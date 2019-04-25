@@ -5,34 +5,26 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 import { createMuiTheme, CssBaseline, MuiThemeProvider, withStyles } from "@material-ui/core"
-import primaryColor from "@material-ui/core/colors/blue"
-import secondaryColor from "@material-ui/core/colors/blueGrey"
+import primaryColor from "@material-ui/core/colors/indigo"
+import secondaryColor from "@material-ui/core/colors/pink"
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { SocialIcon } from "react-social-icons"
-// import WebFont from "webfontloader";
-
 import Header from "./header"
-
-/* WebFont.load({
-  google: {
-    families: ['Roboto:300,400,500'],
-  },
-}); */
 
 // A theme with custom primary and secondary color.
 const theme = createMuiTheme({
   palette: {
     primary: {
       light: primaryColor[300],
-      main: primaryColor[500],
-      dark: primaryColor[700],
+      main: primaryColor[700],
+      dark: primaryColor[900],
     },
     secondary: {
       light: secondaryColor[300],
-      main: secondaryColor[500],
-      dark: secondaryColor[700],
+      main: secondaryColor[600],
+      dark: secondaryColor[900],
     },
   },
 });

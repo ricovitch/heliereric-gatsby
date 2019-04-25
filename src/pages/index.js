@@ -1,7 +1,6 @@
-import { withStyles } from '@material-ui/core';
+import { Typography, withStyles } from "@material-ui/core"
+import { graphql, Link } from "gatsby"
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -11,12 +10,12 @@ const styles = ({ palette, spacing, typography }) => ({
     padding: spacing.unit * 2,
   },
   post: {
-    textDecoration: 'none',
+    textDecoration: "none",
   },
-});
+})
 
 const IndexPage = ({ classes, data }) => {
-  const postList = data.allMarkdownRemark;
+  const postList = data.allMarkdownRemark
 
   return (
     <Layout>
@@ -25,8 +24,9 @@ const IndexPage = ({ classes, data }) => {
         My personal blog<br />
         Previously as3 expert, now focused on JS
       </div>
+      <Typography variant="h3">Latest posts</Typography>
       {postList.edges.map(({ node }, i) => (
-        <Link to={node.fields.slug} className={classes.post} >
+        <Link key={node.fields.slug} to={node.fields.slug} className={classes.post}>
           <div className="post-list">
             <h1>{node.frontmatter.title}</h1>
             <span>{node.frontmatter.date}</span>
@@ -35,10 +35,10 @@ const IndexPage = ({ classes, data }) => {
         </Link>
       ))}
     </Layout>
-  );
+  )
 }
 
-export default withStyles(styles)(IndexPage);
+export default withStyles(styles)(IndexPage)
 
 export const listQuery = graphql`
   query ListQuery {
