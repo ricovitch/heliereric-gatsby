@@ -17,9 +17,9 @@ import Header from "./header"
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: primaryColor[300],
-      main: primaryColor[700],
-      dark: primaryColor[900],
+      light: primaryColor[100],
+      main: primaryColor[300],
+      dark: primaryColor[800],
     },
     secondary: {
       light: secondaryColor[300],
@@ -62,7 +62,9 @@ const Layout = ({ children, classes }) => (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
 
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header
+          siteTitle={data.site.siteMetadata.title}
+        />
         <div className={classes.root}>
           <main className={classes.main}>{children}</main>
           <footer className={classes.footer}>

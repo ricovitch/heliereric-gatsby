@@ -42,13 +42,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Helier Eric`,
+        short_name: `heliereric`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        icon: `src/images/icon.jpg`,
+        background_color: `#303f9f`,
+        theme_color: `#d81b60`,
+        // theme_color_in_head: false, // This will avoid adding theme-color meta tag.
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
