@@ -4,7 +4,7 @@ import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-const BlogPost = (props) => {
+const BlogPostTemplate = props => {
   const post = props.data.markdownRemark
   const { title } = post.frontmatter
 
@@ -22,13 +22,13 @@ const BlogPost = (props) => {
   )
 }
 
-export default BlogPost
+export default BlogPostTemplate
 
 export const query = graphql`
- query PostQuery($slug: String!) {
-     markdownRemark(fields: { slug: { eq: $slug } }) {
-       html
-       frontmatter {
+  query PostQuery($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
         title
         description
         image {
@@ -40,8 +40,8 @@ export const query = graphql`
               ...GatsbyImageSharpFluid
             }
           }
-       }
-       }
-   }
-}
+        }
+      }
+    }
+  }
 `

@@ -10,16 +10,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "posts",
-        path: `${__dirname}/src/pages/posts`,
-      },
-    },
-    `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "projects",
-        path: `${__dirname}/src/pages/projects`,
+        name: "pages",
+        path: `${__dirname}/src/pages`,
       },
     },
     {
@@ -30,12 +22,12 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Roboto:300,400,500']
-        }
-      }
+          families: ["Roboto:300,400,500"],
+        },
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

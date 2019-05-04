@@ -2,7 +2,7 @@ import { Tab, Tabs, withStyles } from "@material-ui/core"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { Location } from '@reach/router';
+import { Location } from "@reach/router"
 
 const styles = ({ palette, spacing, typography }) => ({
   root: {
@@ -42,36 +42,36 @@ const styles = ({ palette, spacing, typography }) => ({
 })
 
 const Header = ({ classes, location, siteTitle }) => {
-  const getActiveTab = (location) => {
-    switch (location.pathname) {
-      case '/':
-        return 0;
-      case '/projects':
-        return 1;
-      case '/blog':
-        return 2;
+  const getActiveTab = location => {
+    const basePath = location.pathname.split("/")[1]
+    switch (basePath) {
+      case "projects":
+        return 1
+      case "blog":
+        return 2
       default:
-        return 0;
+        return 0
     }
   }
-  const activeTab = getActiveTab(location);
+  const activeTab = getActiveTab(location)
 
   return (
     <header className={classes.root}>
       <div className={classes.container}>
-        <Link to="/" className={classes.title}>{siteTitle}</Link>
+        <Link to="/" className={classes.title}>
+          {siteTitle}
+        </Link>
         <Tabs
           centered={true}
-          classes={{ root: classes.tabs, centered: classes.tabsAlign, fixed: classes.tabsFixed }}
+          classes={{
+            root: classes.tabs,
+            centered: classes.tabsAlign,
+            fixed: classes.tabsFixed,
+          }}
           TabIndicatorProps={{ className: classes.tabIndicator }}
           value={activeTab}
         >
-          <Tab
-            label="Home"
-            component={Link}
-            to="/"
-            className={classes.tab}
-          />
+          <Tab label="Home" component={Link} to="/" className={classes.tab} />
           <Tab
             label="Projects"
             component={Link}
@@ -87,7 +87,7 @@ const Header = ({ classes, location, siteTitle }) => {
         </Tabs>
       </div>
     </header>
-  );
+  )
 }
 
 Header.propTypes = {
@@ -105,4 +105,4 @@ export default props => (
   <Location>
     {locationProps => <StyledHeader {...locationProps} {...props} />}
   </Location>
-);
+)

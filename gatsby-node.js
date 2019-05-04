@@ -6,38 +6,40 @@
  */
 const path = require("path")
 const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`)
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
+
   return new Promise((resolve, reject) => {
-    resolve(graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-              fields{
+    const BlogPostTemplate = path.resolve(`src/templates/BlogPostTemplate.js`)
+    resolve(
+      graphql(`
+        {
+          allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+            limit: 1000
+          ) {
+            edges {
+              node {
+                fields {
                   slug
+                }
+                frontmatter {
+                  title
+                }
               }
-            frontmatter {
-              title
             }
           }
         }
-      }
-    }
-  `).then(result => {
+      `).then(result => {
         if (result.errors) {
           console.log(result.errors)
           return reject(result.errors)
         }
-        const blogTemplate = path.resolve('./src/templates/post.js');
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
           createPage({
             path: node.fields.slug,
-            component: blogTemplate,
+            component: BlogPostTemplate,
             context: {
               slug: node.fields.slug,
             }, // additional data can be passed via context
@@ -52,7 +54,7 @@ exports.createPages = ({ actions, graphql }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const slug = createFilePath({ node, getNode, basePath: `pages/blog` })
     createNodeField({
       node,
       name: `slug`,
