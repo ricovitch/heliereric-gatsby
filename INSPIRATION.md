@@ -11,3 +11,4 @@ Blogs complexes
 * https://www.yisela.com/
 * https://www.youfoundron.com/
 * https://kentcdodds.com/
+* https://emasuriano.com/
